@@ -57,7 +57,7 @@ const hasNextPages = computed(() => {
 </script>
 
 <template>
-  <main class="events">
+  <main class="flex flex-col items-center">
     <div class="events-input">
       <label for="events-per-page">Events per page:</label>
       <input type="number" id="events-per-page" v-model.number="eventsPerPage" />
@@ -86,11 +86,6 @@ const hasNextPages = computed(() => {
 </template>
 
 <style scoped>
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .pagination {
   display: flex;
   width: 290px;

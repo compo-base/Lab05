@@ -9,7 +9,7 @@ const { message } = storeToRefs(store)
 </script>
 
 <template>
-  <header>
+  <header class="max-h-screen leading-normal">
     <div id="flashMessage" v-if="message">
       <h4>{{ message }}</h4>
     </div>
@@ -38,10 +38,6 @@ h4 {
 }
 #flashMessage {
   animation: yellowfade 3s ease-in-out;
-}
-header {
-  line-height: 1.5;
-  max-height: 100vh;
 }
 
 .logo {

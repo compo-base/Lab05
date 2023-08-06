@@ -4,7 +4,7 @@ import router from './router'
 import 'nprogress/nprogress.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
+import './assets/style.css'
 const app = createApp(App)
 // let x = 'hhhh'
 // console.log(x)
