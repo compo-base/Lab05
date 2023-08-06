@@ -1,9 +1,9 @@
 <template>
   <RouterLink :to="{ name: 'event-detail', params: { id: event?.id } }" class="event-link">
     <div class="event-class">
-      <div class="event-card">
+      <div class="p-5 w-64 cursor-pointer border border-gray-600 mb-5">
         <span> @{{ event?.time }} on {{ event?.date }}</span>
-        <h4>{{ event?.title }}</h4>
+        <h4 class="mt-2">{{ event?.title }}</h4>
       </div>
     </div>
   </RouterLink>
@@ -19,17 +19,3 @@ const props = defineProps({
   }
 })
 </script>
-
-<style scoped>
-.event-card {
-  padding: 20px;
-  width: 250px;
-  cursor: pointer;
-  border: 1px solid #39495c;
-  margin-bottom: 18px;
-}
-.event-link {
-  color: #2c3e50;
-  text-decoration: none;
-}
-</style>

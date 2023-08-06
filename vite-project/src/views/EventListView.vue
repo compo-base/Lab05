@@ -7,7 +7,6 @@ import { computed, ref, watchEffect } from 'vue'
 import type { Ref } from 'vue'
 import EventService from '@/services/EventService'
 import type { Axios, AxiosResponse } from 'axios'
-import NProgress from 'nprogress'
 import { useRouter } from 'vue-router'
 import { onBeforeRouteUpdate } from 'vue-router'
 
@@ -60,7 +59,12 @@ const hasNextPages = computed(() => {
   <main class="flex flex-col items-center">
     <div class="events-input">
       <label for="events-per-page">Events per page:</label>
-      <input type="number" id="events-per-page" v-model.number="eventsPerPage" />
+      <input
+        type="number"
+        id="events-per-page"
+        v-model.number="eventsPerPage"
+        class="border border-gray-300 p-2 rounded"
+      />
     </div>
     <EventCard v-for="event in events" :key="event.id" :event="event"></EventCard>
     <div class="pagination">
@@ -69,6 +73,7 @@ const hasNextPages = computed(() => {
         rel="prev"
         v-if="page != 1"
         id="page-prev"
+        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 m-5"
       >
         Prev page
       </RouterLink>
@@ -77,6 +82,7 @@ const hasNextPages = computed(() => {
         rel="next"
         v-if="hasNextPages"
         id="page-next"
+        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 m-5"
       >
         Next page
       </RouterLink>
@@ -84,21 +90,3 @@ const hasNextPages = computed(() => {
     <EventOrganizer v-for="event in events" :key="event.id" :event="event"></EventOrganizer>
   </main>
 </template>
-
-<style scoped>
-.pagination {
-  display: flex;
-  width: 290px;
-}
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: blue;
-}
-#page-prev {
-  text-align: left;
-}
-#page-next {
-  text-align: right;
-}
-</style>

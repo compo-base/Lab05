@@ -1,7 +1,9 @@
 <template>
-  <div class="students">
-    <span>Name: {{ student.name }}</span>
-    <span>Surname: {{ student.surname }}</span>
+  <div class="mx-auto w-1/2 mt-10 flex flex-col items-center">
+    <div class="p-5 w-64 cursor-pointer border border-gray-600 mb-5">
+      <p>Name: {{ student.name }}</p>
+      <p>Surname: {{ student.surname }}</p>
+    </div>
   </div>
 </template>
 
@@ -16,12 +18,4 @@ const props = defineProps({
 })
 </script>
 
-<style scoped>
-.students {
-  padding: 20px;
-  width: 250px;
-  cursor: pointer;
-  border: 1px solid #39495c;
-  margin-bottom: 18px;
-}
-</style>
+<style scoped></style>

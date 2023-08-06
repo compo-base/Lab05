@@ -25,6 +25,12 @@ function register() {
 </script>
 
 <template>
-  <p>Registration from here</p>
-  <button @click="register">Regiter Me</button>
+  <div class="mx-auto w-1/2 mt-10 flex flex-col items-center">
+    <div class="p-5 border border-gray-600">
+      <p>Registration from here</p>
+    </div>
+    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5" @click="register">
+      Regiter Me
+    </button>
+  </div>
 </template>
